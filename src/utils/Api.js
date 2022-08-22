@@ -2,6 +2,8 @@ class Api {
   constructor(options) {
     this._baseUrl = options.baseUrl;
     this._headers = options.headers;
+    this._authBaseUrl = options.authBaseUrl;
+    this._authHeaders = options.authHeaders;
   }
 
   _checkResponse(res) {
@@ -9,6 +11,45 @@ class Api {
       return res.json();
     }
     return Promise.reject(`Ошибка ${res.status}`);
+  }
+
+  signUp(email, password) {
+    return fetch(`${this._authBaseUrl}/signup`, {
+      method: "POST",
+      headers: this._authHeaders,
+      body: JSON.stringify({
+        password: password,
+        email: email,
+      }),
+    }).then(this._checkResponse);
+  }
+
+  signIn(email, password) {
+    return fetch(`${this._authBaseUrl}/signin`, {
+      method: "POST",
+      headers: this._authHeaders,
+      body: JSON.stringify({
+        password: password,
+        email: email,
+      }),
+    })
+      .then(this._checkResponse)
+      .then((data) => {
+        if (data.token) {
+          localStorage.setItem("jwt", data.token);
+          return data;
+        }
+      });
+  }
+
+  identificationUser(jwt) {
+    return fetch(`${this._authBaseUrl}/users/me`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${jwt}`,
+      },
+    }).then(this._checkResponse);
   }
 
   getCards() {
@@ -75,6 +116,10 @@ export const api = new Api({
   baseUrl: "https://mesto.nomoreparties.co/v1/cohort-44",
   headers: {
     authorization: "9a69bfa9-7946-4a31-aa6c-90b45ffaa893",
+    "Content-Type": "application/json",
+  },
+  authBaseUrl: "https://auth.nomoreparties.co",
+  authHeaders: {
     "Content-Type": "application/json",
   },
 });
