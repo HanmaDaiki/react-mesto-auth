@@ -7,7 +7,7 @@ function PopupWithForm({
   isOpen = false,
   onClose,
   onSubmit,
-  buttonText
+  buttonText,
 }) {
   if (isOpen) {
     return (

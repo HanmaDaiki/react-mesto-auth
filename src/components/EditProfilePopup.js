@@ -37,12 +37,12 @@ function EditProfilePopup({ onUpdateUser, isOpen, onClose }) {
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleSubmit}
-      buttonText={'Сохранить'}
+      buttonText={"Сохранить"}
       children={
         <>
           <input
             onChange={handleChangeName}
-            defaultValue={name}
+            value={name}
             className="popup__input popup__input_type_name"
             id="edit-name"
             required
@@ -54,7 +54,7 @@ function EditProfilePopup({ onUpdateUser, isOpen, onClose }) {
           <span className="popup__input-error error-edit-name"></span>
           <input
             onChange={handleChangeAbout}
-            defaultValue={about}
+            value={about}
             className="popup__input popup__input_type_description"
             id="edit-description"
             required

@@ -37,7 +37,7 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleSubmit}
-      buttonText={'Создать'}
+      buttonText={"Создать"}
       children={
         <>
           <input

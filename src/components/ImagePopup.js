@@ -7,7 +7,7 @@ function ImagePopup({ card, isOpen, onClose }) {
         <div
           className="popup__overlay popup__overlay_image"
           onClick={onClose}
-        ></div>
+        />
         <div className="popup__image-container">
           <img
             className="popup__image"

@@ -1,7 +1,7 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
 
 function InfoTooltip({ onClose, isOpen, error }) {
-  console.log(isOpen);
   if (isOpen) {
     return (
       <div className="tooltip">
@@ -33,6 +33,7 @@ function InfoTooltip({ onClose, isOpen, error }) {
               <span className="tooltip__title">
                 Вы успешно зарегистрировались!
               </span>
+              <Redirect to="./sing-in" />
             </>
           )}
         </div>
