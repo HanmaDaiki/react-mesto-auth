@@ -19,6 +19,24 @@ function ImagePopup({ card, isOpen, onClose }) {
         </div>
       </div>
     );
+  } else {
+    return (
+      <div className="popup popup_image">
+        <div
+          className="popup__overlay popup__overlay_image"
+          onClick={onClose}
+        />
+        <div className="popup__image-container">
+          <img
+            className="popup__image"
+            src=''
+            alt={`А тут была картинка с названием `}
+          />
+          <h2 className="popup__image-title"></h2>
+          <button className="popup__close" onClick={onClose}></button>
+        </div>
+      </div>
+    )
   }
 }
 
