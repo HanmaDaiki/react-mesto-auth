@@ -1,3 +1,24 @@
+@keyframes modal-window-animation {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  75% {
+    opacity: 0.75;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .tooltip {
   display: flex;
   top: 0;
@@ -5,6 +26,7 @@
   left: 0;
   right: 0;
   position: fixed;
+  animation: modal-window-animation 0.3s linear;
   justify-content: center;
   align-items: center;
 }

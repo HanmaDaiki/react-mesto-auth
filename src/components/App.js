@@ -1,7 +1,7 @@
 import Header from "./Header";
 import Footer from "./Footer";
 import { useEffect, useState } from "react";
-import {Route, Switch, Link, useHistory} from "react-router-dom";
+import { Route, Switch, Link, useHistory } from "react-router-dom";
 import { api } from "../utils/Api";
 import React from "react";
 import Content from "./Content";
@@ -38,38 +38,42 @@ function App() {
   const history = useHistory();
 
   useEffect(() => {
-    api
-      .getCards()
-      .then((cards) => {
-        setCards(cards);
-      })
-      .catch((err) => {
-        console.log(`В апи getCards ошибка - ${err}`);
-      });
+    if (loggedIn) {
+      api
+        .getCards()
+        .then((cards) => {
+          setCards(cards);
+        })
+        .catch((err) => {
+          console.log(`В апи getCards ошибка - ${err}`);
+        });
 
+      api
+        .getUserInfo()
+        .then((user) => {
+          setCurrentUser({
+            name: user.name,
+            about: user.about,
+            avatar: user.avatar,
+            id: user._id,
+          });
+        })
+        .catch((err) => {
+          console.log(`В апи getUserInfo ошибка - ${err}`);
+        });
+    }
+  }, [loggedIn]);
+
+  useEffect(() => {
     api
       .identificationUser(token)
       .then((data) => {
         setEmail(data.data.email);
         setLoggedIn(true);
-        history.push('/')
+        history.push("/");
       })
       .catch((err) => {
         console.log(`В апи identificationUser ошибка - ${err}`);
-      });
-
-    api
-      .getUserInfo()
-      .then((user) => {
-        setCurrentUser({
-          name: user.name,
-          about: user.about,
-          avatar: user.avatar,
-          id: user._id,
-        });
-      })
-      .catch((err) => {
-        console.log(`В апи getUserInfo ошибка - ${err}`);
       });
   }, []);
 
@@ -96,7 +100,7 @@ function App() {
       .then(() => {
         setLoggedIn(true);
         setEmail(email);
-        history.push('/')
+        history.push("/");
       })
       .catch((err) => {
         console.log(`В апи singIn ошибка - ${err}`);

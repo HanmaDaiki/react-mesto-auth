@@ -1,3 +1,25 @@
+@keyframes modal-window-animation {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  75% {
+    opacity: 0.75;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
 .popup {
   display: flex;
   top: 0;
@@ -5,9 +27,7 @@
   left: 0;
   right: 0;
   position: fixed;
-  visibility: hidden;
-  transition: visibility 0.2s, opacity 0.2s linear;
-  opacity: 0;
+  animation: modal-window-animation 0.3s linear;
   justify-content: center;
   align-items: center;
 }
