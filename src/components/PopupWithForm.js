@@ -9,57 +9,34 @@ function PopupWithForm({
   onSubmit,
   buttonText,
 }) {
-  if (isOpen) {
-    return (
-      <div className={`popup popup_${name} popup_active`}>
-        <div className="popup__overlay" onClick={onClose}></div>
-        <div className="popup__container">
-          <button
-            className="popup__close"
-            type="button"
-            onClick={onClose}
-          ></button>
-          <h2 className="popup__title">{title}</h2>
-          <form
-            className="popup__form"
-            name={name}
-            noValidate
-            onSubmit={onSubmit}
-          >
-            {children}
-            <button className="popup__save" type="submit">
-              {buttonText}
-            </button>
-          </form>
-        </div>
+  return (
+    <div className={`popup popup_${name} ${isOpen && "popup_active"}`}>
+      <div className="popup__overlay" onClick={onClose}></div>
+      <div className="popup__container">
+        <button
+          className="popup__close"
+          type="button"
+          onClick={onClose}
+        ></button>
+        <h2 className="popup__title">{isOpen && title}</h2>
+        <form
+          className="popup__form"
+          name={isOpen ? name : ""}
+          noValidate
+          onSubmit={onSubmit}
+        >
+          {isOpen ? children : <>
+
+            <input className='popup__input'/>
+            <input className='popup__input'/>
+          </>}
+          <button className="popup__save" type="submit">
+            {isOpen ? buttonText : 'Кнопочка'}
+          </button>
+        </form>
       </div>
-    );
-  } else {
-    return (
-      <div className={`popup popup_${name}`}>
-        <div className="popup__overlay" onClick={onClose}></div>
-        <div className="popup__container">
-          <button
-            className="popup__close"
-            type="button"
-            onClick={onClose}
-          ></button>
-          <h2 className="popup__title">{title}</h2>
-          <form
-            className="popup__form"
-            name={name}
-            noValidate
-            onSubmit={onSubmit}
-          >
-            {children}
-            <button className="popup__save" type="submit">
-              {buttonText}
-            </button>
-          </form>
-        </div>
-      </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default PopupWithForm;

@@ -87,6 +87,7 @@ function App() {
       .signUp(email, password)
       .then(() => {
         setIsInfoTooltip({ isOpen: true, error: false });
+        history.push('./sing-in')
       })
       .catch((err) => {
         setIsInfoTooltip({ isOpen: true, error: true });
