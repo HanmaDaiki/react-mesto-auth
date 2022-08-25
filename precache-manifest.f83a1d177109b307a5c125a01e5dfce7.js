@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "f65604413fe7e960b15c",
-    "url": "/react-mesto-auth/static/css/main.1583511a.chunk.css"
+    "revision": "3a2587e7b11cac8046e5",
+    "url": "/react-mesto-auth/static/css/main.a84a7a25.chunk.css"
   },
   {
-    "revision": "f65604413fe7e960b15c",
-    "url": "/react-mesto-auth/static/js/main.90722e93.chunk.js"
+    "revision": "3a2587e7b11cac8046e5",
+    "url": "/react-mesto-auth/static/js/main.67af16f8.chunk.js"
   },
   {
     "revision": "fe499b69bdc48c26680f",
     "url": "/react-mesto-auth/static/js/runtime~main.7f01f96f.js"
   },
   {
-    "revision": "597a329a84b51dc4abd2",
-    "url": "/react-mesto-auth/static/js/2.c185dc6e.chunk.js"
+    "revision": "42e1384a2cb5670d3cc6",
+    "url": "/react-mesto-auth/static/js/2.da8fd94e.chunk.js"
   },
   {
     "revision": "114a46de5c05ca60e778",
@@ -24,24 +24,24 @@ self.__precacheManifest = [
     "url": "/react-mesto-auth/static/media/icon-add.bdfb8ebb.svg"
   },
   {
-    "revision": "933106eaf93ffbb3807048cfeeecbcef",
-    "url": "/react-mesto-auth/static/media/icon-like_active.933106ea.svg"
-  },
-  {
-    "revision": "4c6a21695c10c9c77e7676ffa4a389c1",
-    "url": "/react-mesto-auth/static/media/icon-close.4c6a2169.svg"
-  },
-  {
     "revision": "58afbe73d6547d1730a443f381c68d9e",
     "url": "/react-mesto-auth/static/media/icon-edit.58afbe73.svg"
+  },
+  {
+    "revision": "48bb334e9ca31b6263593527bb6314ac",
+    "url": "/react-mesto-auth/static/media/icon-del.48bb334e.svg"
   },
   {
     "revision": "1e75d7d8c7076e1b5ea554f64edfddbb",
     "url": "/react-mesto-auth/static/media/icon-like.1e75d7d8.svg"
   },
   {
-    "revision": "48bb334e9ca31b6263593527bb6314ac",
-    "url": "/react-mesto-auth/static/media/icon-del.48bb334e.svg"
+    "revision": "933106eaf93ffbb3807048cfeeecbcef",
+    "url": "/react-mesto-auth/static/media/icon-like_active.933106ea.svg"
+  },
+  {
+    "revision": "4c6a21695c10c9c77e7676ffa4a389c1",
+    "url": "/react-mesto-auth/static/media/icon-close.4c6a2169.svg"
   },
   {
     "revision": "eba360005eef21ac6807e45dc8422042",
@@ -56,7 +56,7 @@ self.__precacheManifest = [
     "url": "/react-mesto-auth/static/media/Inter-Black.c6dacb6b.ttf"
   },
   {
-    "revision": "61c84e59f1ee63aca9cd265c50781914",
+    "revision": "5a3c5c4e96c51318e54823c893ba3084",
     "url": "/react-mesto-auth/index.html"
   }
 ];
