@@ -5,6 +5,9 @@
   left: 0;
   right: 0;
   position: fixed;
+  visibility: hidden;
+  transition: visibility 0.5s, opacity 0.2s linear;
+  opacity: 0;
   justify-content: center;
   align-items: center;
 }
