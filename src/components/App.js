@@ -264,49 +264,63 @@ function App() {
         </Switch>
         <Footer />
 
-        <EditProfilePopup
-          isOpen={isEditProfilePopupOpen}
-          onClose={closeAllPopups}
-          onUpdateUser={handleUpdateUser}
-        />
+        {
+          isEditProfilePopupOpen &&
+          <EditProfilePopup
+            onClose={closeAllPopups}
+            onUpdateUser={handleUpdateUser}
+          />
+        }
 
-        <EditAvatarPopup
-          isOpen={isEditAvatarPopupOpen}
-          onClose={closeAllPopups}
-          onUpdateAvatar={handleUpdateAvatar}
-        />
+        {
+          isEditAvatarPopupOpen &&
+          <EditAvatarPopup
+            onClose={closeAllPopups}
+            onUpdateAvatar={handleUpdateAvatar}
+          />
+        }
 
-        <AddPlacePopup
-          isOpen={isAddPlacePopupOpen}
-          onClose={closeAllPopups}
-          onAddPlace={handleAddPlace}
-        />
+        {
+          isAddPlacePopupOpen &&
+          <AddPlacePopup
+            onClose={closeAllPopups}
+            onAddPlace={handleAddPlace}
+          />
+        }
 
-        <PopupWithForm
-          name={"delete-card"}
-          title={"Вы уверены?"}
-          isOpen={isConfirmPopupOpen}
-          onClose={closeAllPopups}
-          children={
-            <>
-              <button className="popup__save" type="button">
-                Да
-              </button>
-            </>
-          }
-        />
+        {
+          isConfirmPopupOpen &&
+          <PopupWithForm
+            name={"delete-card"}
+            title={"Вы уверены?"}
+            isOpen={isConfirmPopupOpen}
+            onClose={closeAllPopups}
+            children={
+              <>
+                <button className="popup__save" type="button">
+                  Да
+                </button>
+              </>
+            }
+          />
+        }
 
-        <ImagePopup
-          card={currentCard}
-          isOpen={isImagePopupOpen}
-          onClose={closeAllPopups}
-        />
+        {
+          isImagePopupOpen &&
+          <ImagePopup
+            card={currentCard}
+            isOpen={isImagePopupOpen}
+            onClose={closeAllPopups}
+          />
+        }
 
-        <InfoTooltip
-          isOpen={isInfoTooltip.isOpen}
-          onClose={closeAllPopups}
-          error={isInfoTooltip.error}
-        />
+        {
+          isInfoTooltip.isOpen &&
+          <InfoTooltip
+            onClose={closeAllPopups}
+            error={isInfoTooltip.error}
+          />
+        }
       </CurrentUserContext.Provider>
     </div>
   );

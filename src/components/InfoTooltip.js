@@ -2,9 +2,9 @@ import React from "react";
 import cancel from "../image/cancel.png";
 import accept from "../image/accept.png";
 
-function InfoTooltip({ onClose, isOpen, error }) {
+function InfoTooltip({ onClose, error }) {
   return (
-    <div className={`tooltip ${isOpen && "tooltip_active"}`}>
+    <div className={`tooltip tooltip_active`}>
       <div className="tooltip__overlay" onClick={onClose}></div>
       <div className="tooltip__container">
         <button
