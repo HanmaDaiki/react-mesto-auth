@@ -22,6 +22,10 @@ $ npm install
 $ npm run start
 ```
 
+## Статус Проекта
+
+Завершён!
+
 ## DEMO
 
 [GitHub Pages](https://hanmadaiki.github.io/react-mesto-auth/)
